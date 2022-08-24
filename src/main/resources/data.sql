@@ -1,0 +1,1 @@
+insert into memos (content) values ('test');
