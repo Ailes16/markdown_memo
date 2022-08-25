@@ -9,5 +9,19 @@
 <body>
     <h1>Memo Page</h1>
     <a href="../index.html" th:href="@{/}">Top Page</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>MEMO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="memo : ${memoList}">
+                <th th:text="${memo.id}">(id)</th>
+                <td th:text="${memo.content}">(content)</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
