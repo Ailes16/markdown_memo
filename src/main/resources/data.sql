@@ -1,3 +1,3 @@
-insert into memos (content) values ('test');
-insert into memos (content) values ('test2');
-insert into memos (content) values ('test3');
+insert into memos (title,content) values ('test1','testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest');
+insert into memos (title,content) values ('test2','testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest');
+insert into memos (title,content) values ('test3','testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest');
