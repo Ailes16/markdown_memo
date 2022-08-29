@@ -15,4 +15,8 @@ public class MemoService {
     public List<Memo> findAll() {
         return memoRepository.findAll();
     }
+
+    public Memo findById(int memoId) {
+        return memoRepository.findById(memoId);
+    }
 }

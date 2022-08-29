@@ -10,4 +10,7 @@ public interface MemoRepository {
 
     @Select("select * from memos")
     List<Memo> findAll();
+
+    @Select("select * from memos where id = #{memoId}")
+    Memo findById(int memoId);
 }
