@@ -1,0 +1,11 @@
+#memo .memo-content {
+  display: flex;
+  justify-content: space-between;
+}
+#memo .memo-content aside {
+  width: 25%;
+}
+#memo .memo-content article {
+  width: 75%;
+}
+/*# sourceMappingURL=style.css.map */

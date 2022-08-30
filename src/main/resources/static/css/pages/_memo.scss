@@ -1,0 +1,15 @@
+@use "../config/variables" as v;
+
+#memo {
+    .memo-content {
+        display: flex;
+        justify-content: space-between;
+
+        aside {
+            width: 25%;
+        }
+        article {
+            width: 75%;
+        }
+    }
+}
