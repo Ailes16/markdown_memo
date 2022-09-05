@@ -1,2 +1,2 @@
-#memo .memo-content{display:flex;justify-content:space-between}#memo .memo-content aside{width:25%}#memo .memo-content article{width:75%}
+#memo .memo-content{display:flex;justify-content:space-between}#memo .memo-content aside{width:20%;background-color:#0bd}#memo .memo-content article{width:80%;background-color:silver}
 /*# sourceMappingURL=style.min.css.map */

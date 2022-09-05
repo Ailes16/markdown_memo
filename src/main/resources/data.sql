@@ -6,4 +6,11 @@ insert into memos (title,content) values ('test1','## markdownアプリの作成
 insert into memos (title,content) values ('test2','table|#|#
 -|-|-
 practice1|practice2|practice3');
-insert into memos (title,content) values ('test3','testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest33333');
+insert into memos (title,content) values ('test3','## code test
+```java
+public class Test{
+    public static void main(String[] args){
+        System.out.pringln("Hello world!!");
+    }
+}
+```');
