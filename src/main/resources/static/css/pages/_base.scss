@@ -1,0 +1,11 @@
+@use "../config/variables" as v;
+
+button{
+    border: solid 1px #0bd;
+}
+label{
+    display: block;
+}
+input[type="text"], textarea{
+    border: solid 3px #0bd;
+}

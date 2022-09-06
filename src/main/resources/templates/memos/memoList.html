@@ -13,6 +13,7 @@
 <body>
     <h1>Memo List Page</h1>
     <a href="../index.html" th:href="@{/}">Top Page</a>
+    <a href="./creationMemo.html" th:href="@{/memos/creationMemo}">Create</a>
     <ul th:each="memo : ${memoList}">
         <li>
             <a href="./memo.html" th:href="@{/memos/{memoId}(memoId=${memo.id})}" th:text="${memo.title}">(title)</a>

@@ -18,14 +18,14 @@
             <a href="./memo.html" th:href="@{/memos/{memoId}(memoId=${memo.id})}" th:text="${memo.title}">(title)</a>
         </li>
     </ul>
-    <form action="#" th:action="@{/memos}" th:method="post">
+    <form action="#" th:action="@{/memos}" th:method="post" th:object="${memoForm}">
         <div>
             <label for="titleInput">Title</label>
-            <input type="text" id="titleInput">
+            <input type="text" id="titleInput" th:field="*{title}">
         </div>
         <div>
             <label for="contentInput">content</label>
-            <textarea id="contentInput" cols="30" rows="10"></textarea>
+            <textarea id="contentInput" cols="30" rows="10" th:field="*{content}"></textarea>
         </div>
         <div>
             <button type="submit">submit</button>
