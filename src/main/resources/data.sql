@@ -1,4 +1,4 @@
-insert into memos (title,content) values ('test1','## markdownアプリの作成
+insert into memos (title,content) values ('test1','# markdownアプリの作成
 - リスト1
 - リスト2
 - リスト3  
@@ -6,7 +6,7 @@ insert into memos (title,content) values ('test1','## markdownアプリの作成
 insert into memos (title,content) values ('test2','table|#|#
 -|-|-
 practice1|practice2|practice3');
-insert into memos (title,content) values ('test3','## code test
+insert into memos (title,content) values ('test3','# code test
 ```java
 public class Test{
     public static void main(String[] args){
