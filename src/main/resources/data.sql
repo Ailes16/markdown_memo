@@ -10,7 +10,20 @@ insert into memos (title,content) values ('test3','## code test
 ```java
 public class Test{
     public static void main(String[] args){
-        System.out.pringln("Hello world!!");
+        System.out.println("Hello world!!");
     }
 }
-```');
+```
+
+```html
+<h1>highlight test</h1>
+<p>texttexttext</p>
+```
+
+```css
+div {
+    background-color: #fff;
+    color: #000;
+}
+```
+');
