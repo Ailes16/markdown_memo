@@ -1,0 +1,80 @@
+@use "../setting/variables" as v;
+
+header {
+    background-color: v.$main-color1;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    nav {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        li {
+            list-style: none;
+        }
+        a {
+            color: rgba($color: v.$text-color2, $alpha: 0.7);
+            text-decoration: none;
+            
+            &:hover {
+                color: rgba($color: v.$text-color2, $alpha: 1.0);
+            }
+        }
+        .header-title {
+            margin-left: 5%;
+
+            a {
+                font-size: 3rem;
+            }
+        }
+        .header-right {
+            display: flex;
+            align-items: flex-end;
+            margin-right: 5%;
+
+            .header-menu {
+                display: flex;
+                padding-bottom: 10px;
+    
+                .menu-list {
+                    margin-left: 20px;
+    
+                }
+            }
+            .user-menu {
+                padding-bottom: 10px;
+                margin-left: 20px;
+
+                .user-icon {
+                    color: rgba($color: v.$text-color2, $alpha: 0.7);
+                    font-size: 1.2rem;
+    
+                    &:hover {
+                        color: rgba($color: v.$text-color2, $alpha: 1.0);
+                    }
+                }
+                .dropdown {
+                    display: none;
+                    position: absolute;
+                    top: 80px;
+                    right: 0;
+                    width: 200px;
+                    background-color: rgba($color: v.$main-color1, $alpha: .9);
+
+                    .menu-list {
+                        padding: 10px 20px;
+                    }
+                }
+                &:hover .dropdown {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -34,10 +34,10 @@ public class MemoController {
         return "memos/memo";
     }
 
-    @GetMapping("/creationMemo")
+    @GetMapping("/createMemo")
     public String showCreationMemo(@ModelAttribute MemoForm form) {
 
-        return "memos/creationMemo";
+        return "memos/createMemo";
     }
 
     @PostMapping

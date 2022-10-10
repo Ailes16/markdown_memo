@@ -1,0 +1,9 @@
+@use "../setting/variables" as v;
+
+html {
+    font-size: 100%;
+
+    body {
+        background-color: v.$base-color;
+    }
+}
