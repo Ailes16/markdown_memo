@@ -4,19 +4,16 @@ $(function(){
         $(this).next(".memo-list").slideToggle("fast");
     });
 
-    // $("#memo-content").html(marked.parse(content));
-
-    // highlight.jsの呼び出し
-    hljs.initHighlightingOnLoad();
+    // memo-name押下時の処理
+    $(".memo-name").click(function(){
+        const targetMemo = memoList.find((v) => v.id == $(this).attr("id"));
+        $("#memo-content").html(marked.parse(targetMemo.content));
+        hljs.initHighlightingOnLoad();
+    });
 
     // preview機能
     $("#contentInput").on("input",function(){
         $("#preview").html(marked.parse($("#contentInput").val()));
         hljs.initHighlightingOnLoad();
     });
-    // markdown memoの表示 TODO: 修正
-    // function showContent(){
-    //     $("#memo-content").html(marked.parse(content));
-    //     hljs.initHighlightingOnLoad();
-    // }
 });

@@ -27,10 +27,9 @@
     <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js}" defer></script>
     <!-- js -->
     <script th:src="@{/js/main.js}" defer></script>
-    <!-- TODO: 修正 -->
+    <!-- thymeleaf js -->
     <script th:inline="javascript" defer>
-        const content = /*[[${memos.content}]]*/"memos.content";
-        // showContent();
+        const memoList = /*[[${memoList}]]*/"memoList";
     </script>
 </head>
 <body>
@@ -73,7 +72,7 @@
             </div>
             <div class="memo-list-container">
                 <ul class="directory-list" th:each="memo : ${memoList}">
-                    <li class="memo-name" th:text="${memo.title}">(memo-name)</li> <!-- th:href="@{/memos/{memoId}(memoId=${memo.id})}" -->
+                    <li class="memo-name" th:id="${memo.id}" th:text="${memo.title}">(memo-name)</li> <!-- th:href="@{/memos/{memoId}(memoId=${memo.id})}" th:id="'memo' + ${memo.id}" -->
                     <li class="directory-name">(directory1)</li>
                     <ul class="memo-list">
                         <li class="directory-name">(directory1-1)</li>
