@@ -20,7 +20,7 @@
 
     <!-- Javascript -->
     <!-- jquery -->
-    <script th:src="@{https://code.jquery.com/jquery-3.6.1.min.js}"defer></script> <!-- integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" -->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.1.min.js}" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
     <!-- marked.js -->
     <script th:src="@{https://cdn.jsdelivr.net/npm/marked/marked.min.js}" defer></script>
     <!-- highlight.js -->
@@ -60,7 +60,7 @@
         <!-- create -->
         <div id="create">
             <form action="#" th:action="@{/memos}" th:method="post" th:object="${memoForm}">
-                <input type="text" id="titleInput" placeholder="memo name" th:field="*{title}" required>
+                <input type="text" id="memoNameInput" placeholder="memo name" th:field="*{memoName}" required>
                 <textarea id="contentInput" placeholder="Markdown記法でMemoしよう" th:field="*{content}"></textarea>
                 <div class="btn-container">
                     <a href="./memo.html" th:href="@{/memos}" class="button secondary">キャンセル</a>

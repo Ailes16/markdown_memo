@@ -47,7 +47,7 @@ public class MemoController {
             return showCreationMemo(form);
         }
 
-        memoService.create(form.getTitle(), form.getContent());
+        memoService.create(form.getMemoName(), form.getContent());
         return "redirect:/memos";
     }
 }

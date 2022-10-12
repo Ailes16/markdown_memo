@@ -16,6 +16,6 @@ public interface MemoRepository {
     @Select("select * from memos where id = #{memoId}")
     Memo findById(int memoId);
 
-    @Insert("insert into memos (title, content) values (#{title}, #{content})")
-    void insert(@Param("title") String title, @Param("content") String content);
+    @Insert("insert into memos (memo_name, content) values (#{memoName}, #{content})")
+    void insert(@Param("memoName") String memoName, @Param("content") String content);
 }

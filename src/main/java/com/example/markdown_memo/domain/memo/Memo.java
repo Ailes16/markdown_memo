@@ -8,6 +8,6 @@ import lombok.Data;
 public class Memo {
 
     private int id;
-    private String title;
+    private String memoName;
     private String content;
 }
