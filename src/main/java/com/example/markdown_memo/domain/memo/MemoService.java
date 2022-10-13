@@ -13,8 +13,8 @@ public class MemoService {
 
     private final MemoRepository memoRepository;
 
-    public List<Memo> findAll() {
-        return memoRepository.findAll();
+    public List<Memo> findAll(int groupId) {
+        return memoRepository.findAll(groupId);
     }
 
     public Memo findById(int memoId) {

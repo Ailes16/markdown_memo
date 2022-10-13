@@ -6,7 +6,8 @@ $(function(){
 
     // memo-name押下時の処理
     $(".memo-name").click(function(){
-        const targetMemo = memoList.find((v) => v.id == $(this).attr("id"));
+        const targetMemo = memoList.find((v) => v.memoId == $(this).attr("id"));
+        console.log(targetMemo);
         $("#memo-content").html(marked.parse(targetMemo.content));
         hljs.initHighlightingOnLoad();
     });

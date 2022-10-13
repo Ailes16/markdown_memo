@@ -7,7 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Memo {
 
-    private int id;
+    private int memoId;
     private String memoName;
     private String content;
+    private int groupId;
 }

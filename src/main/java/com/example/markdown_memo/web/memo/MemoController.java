@@ -15,22 +15,17 @@ import com.example.markdown_memo.domain.memo.MemoService;
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequestMapping("/memos")
+// @RequestMapping("/memos")
+@RequestMapping("/memos/{groupId}")
 @RequiredArgsConstructor
 public class MemoController {
 
     private final MemoService memoService;
 
+    // @GetMapping("/{groupId}")
     @GetMapping
-    public String showMemoList(Model model) {
-        model.addAttribute("memoList", memoService.findAll());
-        return "memos/memoList";
-    }
-
-    @GetMapping("/{memoId}")
-    public String showMemoPage(@PathVariable("memoId") int memoId, Model model) {
-        model.addAttribute("memoList", memoService.findAll());
-        model.addAttribute("memos", memoService.findById(memoId));
+    public String showMemoPage(@PathVariable("groupId") int groupId, Model model) {
+        model.addAttribute("memoList", memoService.findAll(groupId));
         return "memos/memo";
     }
 
@@ -48,6 +43,6 @@ public class MemoController {
         }
 
         memoService.create(form.getMemoName(), form.getContent());
-        return "redirect:/memos";
+        return "redirect:/memos"; // TODO: groupIdの追加
     }
 }
