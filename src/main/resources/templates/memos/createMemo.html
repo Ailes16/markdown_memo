@@ -59,11 +59,11 @@
     <main id="createMemo">
         <!-- create -->
         <div id="create">
-            <form action="#" th:action="@{/memos}" th:method="post" th:object="${memoForm}">
+            <form action="#" th:action="@{/memos/{groupId}(groupId=${group.groupId})}" th:method="post" th:object="${memoForm}">
                 <input type="text" id="memoNameInput" placeholder="memo name" th:field="*{memoName}" required>
                 <textarea id="contentInput" placeholder="Markdown記法でMemoしよう" th:field="*{content}"></textarea>
                 <div class="btn-container">
-                    <a href="./memo.html" th:href="@{/memos}" class="button secondary">キャンセル</a>
+                    <a href="./memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" class="button secondary">キャンセル</a>
                     <button type="submit" class="button primary">作成</button>
                 </div>
             </form>

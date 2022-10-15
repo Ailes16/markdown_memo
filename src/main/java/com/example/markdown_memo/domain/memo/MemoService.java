@@ -22,7 +22,7 @@ public class MemoService {
     }
 
     @Transactional
-    public void create(String memoName, String content) {
-        memoRepository.insert(memoName, content);
+    public void create(String memoName, String content, int groupId) {
+        memoRepository.insert(memoName, content, groupId);
     }
 }

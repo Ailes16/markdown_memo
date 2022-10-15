@@ -10,4 +10,7 @@ public interface GroupRepository {
 
     @Select("select * from groups")
     List<Group> findAll();
+
+    @Select("select * from groups where id = #{groupId}")
+    Group findById(int groupId);
 }
