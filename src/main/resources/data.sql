@@ -28,5 +28,7 @@ div {
 }
 ```
 ',1);
+insert into users (user_name,email,password) values ('sample user','sample@example.co.jp','password');
+insert into users (user_name,email,password) values ('sample user2','sample2@example.co.jp','password');
 insert into groups (group_name) values ('testGroup');
 insert into groups (group_name) values ('testGroup2');
