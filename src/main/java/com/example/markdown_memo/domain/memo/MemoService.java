@@ -13,8 +13,8 @@ public class MemoService {
 
     private final MemoRepository memoRepository;
 
-    public List<Memo> findAll() {
-        return memoRepository.findAll();
+    public List<Memo> findAll(int groupId) {
+        return memoRepository.findAll(groupId);
     }
 
     public Memo findById(int memoId) {
@@ -22,7 +22,7 @@ public class MemoService {
     }
 
     @Transactional
-    public void create(String title, String content) {
-        memoRepository.insert(title, content);
+    public void create(String memoName, String content, int groupId) {
+        memoRepository.insert(memoName, content, groupId);
     }
 }

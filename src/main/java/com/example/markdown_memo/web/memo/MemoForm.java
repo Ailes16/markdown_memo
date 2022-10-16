@@ -10,7 +10,7 @@ public class MemoForm {
 
     @NotBlank
     @Size(max = 30)
-    private String title;
+    private String memoName;
 
     @NotBlank
     @Size(max = 2000)

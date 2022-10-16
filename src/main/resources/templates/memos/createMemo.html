@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo Page | Markdown Memo</title>
+    <title>Creation Memo Page | Markdown Memo</title>
 
     <!-- CSS -->
     <!-- reset css -->
@@ -27,10 +27,6 @@
     <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js}" defer></script>
     <!-- js -->
     <script th:src="@{/js/main.js}" defer></script>
-    <!-- thymeleaf js -->
-    <script th:inline="javascript" defer>
-        const memoList = /*[[${memoList}]]*/"memoList";
-    </script>
 </head>
 <body>
     <!-- header -->
@@ -60,50 +56,21 @@
     </header>
 
     <!-- main -->
-    <main id="memo">
-        <!-- side -->
-        <aside>
-            <div class="side-header">
-                <h2 class="group-name"><a href="../groups/groupList.html" th:href="@{/groups}" th:text="${group.groupName}">(group-name)</a></h2>
-                <ul class="side-menu">
-                    <li class="menu-list"><a href="./createMemo.html" th:href="@{/memos/{groupId}/createMemo(groupId=${group.groupId})}"><i class="fa-solid fa-file"></i></a></li>
-                    <li class="menu-list"><a href="#"><i class="fa-solid fa-folder"></i></a></li>
-                </ul>
-            </div>
-            <div class="memo-list-container">
-                <ul class="directory-list" th:each="memo : ${memoList}">
-                    <li class="memo-name" th:id="${memo.memoId}" th:text="${memo.memoName}">(memo name)</li> <!-- th:href="@{/memos/{memoId}(memoId=${memo.id})}" th:id="'memo' + ${memo.id}" -->
-                    <li class="directory-name">(directory1)</li>
-                    <ul class="memo-list">
-                        <li class="directory-name">(directory1-1)</li>
-                        <ul class="memo-list">
-                            <li class="memo-name">(memo1)</li>
-                            <li class="memo-name">(memo2)</li>
-                            <li class="memo-name">(memo3)</li>
-                        </ul>
-                    </ul>
-                </ul>
-            </div>
-        </aside>
-    
-        <!-- memo-content -->
-        <article class="markdown-body">
-            <div id="memo-content">
-                <h1>GitHub Markdown Sample</h1>
-                <h2>list</h2>
-                <ul>
-                    <li>1つ目</li>
-                    <li>2つ目</li>
-                    <li>3つ目</li>
-                </ul>
-            </div>
-        </article>
-        <div class="edit-wrapper">
-            <ul class="edit-menu">
-                <li class="menu-list"><a href="#" class="delete"><i class="fa-solid fa-trash"></i></a></li>
-                <li class="menu-list"><a href="#" class="edit"><i class="fa-solid fa-pen"></i></a></li>
-            </ul>
+    <main id="createMemo">
+        <!-- create -->
+        <div id="create">
+            <form action="#" th:action="@{/memos/{groupId}(groupId=${group.groupId})}" th:method="post" th:object="${memoForm}">
+                <input type="text" id="memoNameInput" placeholder="memo name" th:field="*{memoName}" required>
+                <textarea id="contentInput" placeholder="Markdown記法でMemoしよう" th:field="*{content}"></textarea>
+                <div class="btn-container">
+                    <a href="./memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" class="button secondary">キャンセル</a>
+                    <button type="submit" class="button primary">作成</button>
+                </div>
+            </form>
         </div>
+
+        <!-- preview -->
+        <div id="preview" class="markdown-body"></div>
     </main>
 
     <!-- footer -->

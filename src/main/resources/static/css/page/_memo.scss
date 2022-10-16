@@ -1,0 +1,45 @@
+@use "../setting/variables" as v;
+
+#memo {
+    
+    article {
+        width: calc(100% - 360px); // asideを引いた幅
+        margin-left: 360px;
+        padding: 50px 100px;
+    }
+    .edit-wrapper {
+        position: fixed;
+        top: 90px;
+        right: 5%;
+        z-index: 80;
+        
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .edit-menu {
+            display: flex;
+
+            .menu-list {
+                margin-left: 20px;
+            }
+            .delete {
+                color: rgba($color: v.$text-color1, $alpha: 0.7);
+
+                &:hover {
+                    color: rgba($color: red, $alpha: 1.0);
+                }
+            }
+            .edit {
+                color: rgba($color: v.$text-color1, $alpha: 0.7);
+                
+                &:hover {
+                    color: rgba($color: v.$accent-color, $alpha: 1.0);
+                }
+            }
+        }
+    }
+}

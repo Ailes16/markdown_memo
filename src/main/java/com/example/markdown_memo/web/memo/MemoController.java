@@ -10,44 +10,45 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.markdown_memo.domain.group.GroupService;
 import com.example.markdown_memo.domain.memo.MemoService;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequestMapping("/memos")
+@RequestMapping("/memos/{groupId}")
 @RequiredArgsConstructor
 public class MemoController {
 
     private final MemoService memoService;
+    private final GroupService groupService;
 
     @GetMapping
-    public String showMemoList(Model model) {
-        model.addAttribute("memoList", memoService.findAll());
-        return "memos/memoList";
-    }
+    public String showMemoPage(@PathVariable("groupId") int groupId, Model model) {
 
-    @GetMapping("/{memoId}")
-    public String showMemoPage(@PathVariable("memoId") int memoId, Model model) {
-        model.addAttribute("memoList", memoService.findAll());
-        model.addAttribute("memos", memoService.findById(memoId));
+        model.addAttribute("group", groupService.findById(groupId));
+        model.addAttribute("memoList", memoService.findAll(groupId));
         return "memos/memo";
     }
 
-    @GetMapping("/creationMemo")
-    public String showCreationMemo(@ModelAttribute MemoForm form) {
+    @GetMapping("/createMemo")
+    public String showCreationMemo(@ModelAttribute MemoForm form, @PathVariable("groupId") int groupId, Model model) {
 
-        return "memos/creationMemo";
+        model.addAttribute("group", groupService.findById(groupId));
+        return "memos/createMemo";
     }
 
     @PostMapping
-    public String create(@Validated MemoForm form, BindingResult bindingResult, Model model) {
+    public String create(@Validated MemoForm form, BindingResult bindingResult, @PathVariable("groupId") int groupId,
+            Model model) {
+
+        model.addAttribute("group", groupService.findById(groupId));
 
         if (bindingResult.hasErrors()) {
-            return showCreationMemo(form);
+            return showCreationMemo(form, groupId, model);
         }
 
-        memoService.create(form.getTitle(), form.getContent());
-        return "redirect:/memos";
+        memoService.create(form.getMemoName(), form.getContent(), groupId);
+        return "redirect:/memos/" + groupId;
     }
 }

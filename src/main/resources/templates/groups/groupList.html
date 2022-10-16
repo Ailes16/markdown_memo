@@ -11,12 +11,11 @@
     <link rel="stylesheet" th:href="@{/css/style.min.css}" />
 </head>
 <body>
-    <h1>Memo List Page</h1>
+    <h1>Group List Page</h1>
     <a href="../index.html" th:href="@{/}">Top Page</a>
-    <a href="./creationMemo.html" th:href="@{/memos/creationMemo}">Create</a>
-    <ul th:each="memo : ${memoList}">
+    <ul th:each="group : ${groupList}">
         <li>
-            <a href="./memo.html" th:href="@{/memos/{memoId}(memoId=${memo.memoId})}" th:text="${memo.memoName}">(memo name)</a>
+            <a href="../memos/memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" th:text="${group.groupName}">(group name)</a>
         </li>
     </ul>
 </body>

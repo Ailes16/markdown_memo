@@ -1,0 +1,9 @@
+@use "../setting/variables" as v;
+
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic",
+    "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+  color: v.$text-color1;
+}

@@ -1,4 +1,20 @@
-function showContent(){
+$(function(){
+    // memo-listのトグル
+    $(".directory-name").click(function(){
+        $(this).next(".memo-list").slideToggle("fast");
+    });
 
-    document.getElementById('content').innerHTML = marked.parse(content);
-}
+    // memo-name押下時の処理
+    $(".memo-name").click(function(){
+        const targetMemo = memoList.find((v) => v.memoId == $(this).attr("id"));
+        console.log(targetMemo);
+        $("#memo-content").html(marked.parse(targetMemo.content));
+        hljs.initHighlightingOnLoad();
+    });
+
+    // preview機能
+    $("#contentInput").on("input",function(){
+        $("#preview").html(marked.parse($("#contentInput").val()));
+        hljs.initHighlightingOnLoad();
+    });
+});

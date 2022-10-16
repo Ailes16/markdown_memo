@@ -1,6 +1,21 @@
 @charset "utf-8";
 
-@use "config/fonts";
+// setting
+@use "setting/config";
 
-@use "pages/base";
-@use "pages/memo";
+// base
+@use "base/base";
+@use "base/reset";
+
+// mixin
+@use "mixin/font";
+
+// module
+@use "module/footer";
+@use "module/header";
+@use "module/main";
+@use "module/side";
+
+// page
+@use "page/memo";
+@use "page/createMemo";
