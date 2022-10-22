@@ -47,7 +47,9 @@
                     </a>
                     <div class="dropdown">
                         <ul class="dropdown-menu">
-                            <li class="menu-list"><a href="#">ログアウト</a></li>
+                            <li class="menu-list">
+                                <form action="#" th:action="@{/logout}" method="post"><button type="submit" class="logout">ログアウト</button></form>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -101,6 +101,12 @@ header nav .header-right .user-menu .dropdown {
 header nav .header-right .user-menu .dropdown .menu-list {
   padding: 10px 20px;
 }
+header nav .header-right .user-menu .dropdown .menu-list .logout {
+  color: rgba(255, 255, 255, 0.7);
+}
+header nav .header-right .user-menu .dropdown .menu-list .logout:hover {
+  color: white;
+}
 header nav .header-right .user-menu:hover .dropdown {
   display: block;
 }
