@@ -40,22 +40,29 @@
     <main id="signup">
         <div class="signup-form">
             <h2 class="form-title">新規登録</h2>
-            <form action="#" th:action="@{/signup}" th:method="post" th:object="${userForm}">
+            <form action="#" th:action="@{/signup}" th:method="post" th:object="${signupForm}">
+                <!-- username -->
                 <div class="form-item">
-                    <p class="formLabel">Name</p>
+                    <p class="formLabel" th:classappend="*{username} ? 'formTop'">Name</p> <!-- TODO:認証失敗対策 -->
                     <input type="text" name="username" id="usernameInput" class="formInput" th:field="*{username}">
+                    <p class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">(errors)</p>
                 </div>
+                <!-- email -->
                 <div class="form-item">
-                    <p class="formLabel">Email</p>
+                    <p class="formLabel" th:classappend="*{email} ? 'formTop'">Email</p>
                     <input type="email" name="email" id="emailInput" class="formInput" th:field="*{email}">
+                    <p class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">(errors)</p>
                 </div>
+                <!-- password -->
                 <div class="form-item">
-                    <p class="formLabel">Password</p>
+                    <p class="formLabel" th:classappend="*{password} ? 'formTop'">Password</p>
                     <span class="passwordCheck"><i class="fa-solid fa-eye-slash"></i></span>
                     <input type="password" name="password" id="passwordInput" class="formInput" th:field="*{password}">
+                    <p class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">(errors)</p>
                 </div>
+                <!-- button -->
                 <div class="form-foot">
-                    <a href="./login.html" th:href="@{/}" class="button secondary">キャンセル</a>
+                    <a href="../login/login.html" th:href="@{/}" class="button secondary">キャンセル</a>
                     <button type="submit" class="button primary">登録</button>
                 </div>
             </form>

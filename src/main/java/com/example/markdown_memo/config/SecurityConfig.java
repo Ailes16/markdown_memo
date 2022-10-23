@@ -20,6 +20,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         .antMatchers("/css/**", "/js/**").permitAll()
                         .mvcMatchers("/login/**").permitAll()
+                        .mvcMatchers("/signup/**").permitAll()
                         .anyRequest().authenticated());
 
         return http.build();

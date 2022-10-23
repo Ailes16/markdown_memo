@@ -41,17 +41,23 @@
         <div class="login-form">
             <h2 class="form-logo">(title)</h2>
             <form action="#" th:action="@{/login}" method="post">
+                <!-- email -->
                 <div class="form-item">
                     <p class="formLabel">Email</p>
                     <input type="email" name="email" id="emailInput" class="formInput">
                 </div>
+                <!-- password -->
                 <div class="form-item">
                     <p class="formLabel">Password</p>
                     <span class="passwordCheck"><i class="fa-solid fa-eye-slash"></i></span>
                     <input type="password" name="password" id="passwordInput" class="formInput">
                 </div>
+                <!-- error message -->
+                <div th:if="${param.error}">
+                    <p class="invalid-feedback">メールアドレスもしくはパスワードが違います</p>
+                </div>
                 <div class="form-foot">
-                    <a href="./signup.html" th:href="@{/signup}" class="sign-up">新規登録</a>
+                    <a href="../signup/signup.html" th:href="@{/signup}" class="sign-up">新規登録</a>
                     <button type="submit" class="button primary">Log In</button>
                 </div>
             </form>
