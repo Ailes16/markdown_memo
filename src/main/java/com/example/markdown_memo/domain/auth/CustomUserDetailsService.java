@@ -11,20 +11,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+        private final UserRepository userRepository;
 
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        @Override
+        public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        return userRepository.findByEmail(email)
-                .map(
-                        user -> new CustomUserDetails(
-                                user.getUsername(),
-                                user.getEmail(),
-                                user.getPassword()))
-                .orElseThrow(
-                        () -> new UsernameNotFoundException(
-                                "Given email is not found. (email = '" + email + "')"));
-    }
+                return userRepository.findByEmail(email)
+                                .map(
+                                                user -> new CustomUserDetails(
+                                                                user.getUserId(),
+                                                                user.getUsername(),
+                                                                user.getEmail(),
+                                                                user.getPassword()))
+                                .orElseThrow(
+                                                () -> new UsernameNotFoundException(
+                                                                "Given email is not found. (email = '" + email + "')"));
+        }
 
 }

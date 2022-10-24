@@ -19,4 +19,10 @@ public class GroupService {
     public Group findById(int groupId) {
         return groupRepository.findById(groupId);
     }
+
+    public void createMain(int userId) {
+        final Group group = new Group(0, null);
+        groupRepository.insertMain(group);
+        groupRepository.insertMembership(userId, group.getGroupId());
+    }
 }

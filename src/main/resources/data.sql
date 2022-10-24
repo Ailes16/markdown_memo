@@ -32,3 +32,5 @@ insert into users (user_name,email,password) values ('sample user','sample@examp
 insert into users (user_name,email,password) values ('sample user2','sample2@example.co.jp','734b52dca65a40f889a2c5faf6c3bbb114c89fec2fa95cf6ec59aa7b543020ef5ff28967d82ac8ff');
 insert into groups (group_name) values ('testGroup');
 insert into groups (group_name) values ('testGroup2');
+insert into membership (user_id,group_id) values (1,1);
+insert into membership (user_id,group_id) values (2,2);

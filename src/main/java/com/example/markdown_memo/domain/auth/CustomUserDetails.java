@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class CustomUserDetails extends User implements UserDetails {
 
-    public CustomUserDetails(String username, String email, String password) {
-        super(username, email, password);
+    public CustomUserDetails(int userId, String username, String email, String password) {
+        super(userId, username, email, password);
     }
 
     @Override

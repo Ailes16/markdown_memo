@@ -14,3 +14,8 @@ create table groups (
     id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     group_name VARCHAR(20) NOT NULL
 );
+create table membership (
+    id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT NOT NULL,
+    group_id BIGINT NOT NULL
+);
