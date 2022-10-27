@@ -20,7 +20,4 @@ public interface GroupRepository {
     @Insert("insert into groups (group_name) values ('My Memos')")
     @Options(useGeneratedKeys = true, keyProperty = "group.groupId", keyColumn = "id")
     void insertMain(@Param("group") Group group);
-
-    @Insert("insert into membership (user_id, group_id) values (#{userId}, #{groupId})")
-    void insertMembership(@Param("userId") int userId, @Param("groupId") int groupId);
 }
