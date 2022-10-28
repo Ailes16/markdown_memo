@@ -30,7 +30,7 @@
                 background-color: v.$accent-color;
             }
             .primary {
-                background-color: rgba($color: v.$accent-color, $alpha: .7);
+                background-color: rgba($color: v.$accent-color, $alpha: .8);
                 color: v.$text-color2;
 
                 &:hover {
@@ -38,7 +38,7 @@
                 }
             }
             .secondary {
-                background-color: rgba($color: v.$main-color1, $alpha: .7);
+                background-color: rgba($color: v.$main-color1, $alpha: .8);
                 color: v.$text-color2;
 
                 &:hover {

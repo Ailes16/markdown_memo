@@ -19,6 +19,10 @@ h6 {
   font-weight: normal;
 }
 
+.invalid-feedback {
+  color: red;
+}
+
 body {
   font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
   line-height: 1.7;
@@ -101,6 +105,12 @@ header nav .header-right .user-menu .dropdown {
 header nav .header-right .user-menu .dropdown .menu-list {
   padding: 10px 20px;
 }
+header nav .header-right .user-menu .dropdown .menu-list .logout {
+  color: rgba(255, 255, 255, 0.7);
+}
+header nav .header-right .user-menu .dropdown .menu-list .logout:hover {
+  color: white;
+}
 header nav .header-right .user-menu:hover .dropdown {
   display: block;
 }
@@ -178,15 +188,14 @@ aside .memo-list-container .memo-list {
 #memo .edit-wrapper li {
   list-style: none;
 }
-#memo .edit-wrapper a {
-  text-decoration: none;
-  font-size: 1.2rem;
+#memo .edit-wrapper button {
+  font-size: 1.4rem;
 }
 #memo .edit-wrapper .edit-menu {
   display: flex;
 }
 #memo .edit-wrapper .edit-menu .menu-list {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 #memo .edit-wrapper .edit-menu .delete {
   color: rgba(52, 58, 64, 0.7);
@@ -229,14 +238,14 @@ aside .memo-list-container .memo-list {
   background-color: #0bd;
 }
 #createMemo #create .btn-container .primary {
-  background-color: rgba(0, 187, 221, 0.7);
+  background-color: rgba(0, 187, 221, 0.8);
   color: #fff;
 }
 #createMemo #create .btn-container .primary:hover {
   background-color: #0bd;
 }
 #createMemo #create .btn-container .secondary {
-  background-color: rgba(52, 58, 64, 0.7);
+  background-color: rgba(52, 58, 64, 0.8);
   color: #fff;
 }
 #createMemo #create .btn-container .secondary:hover {
@@ -271,5 +280,231 @@ aside .memo-list-container .memo-list {
   width: 50%;
   margin-left: 50%;
   padding: 50px 100px;
+}
+
+#login {
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #bcb8b8;
+}
+#login .login-form {
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  margin: 80px auto;
+  border-radius: 5px;
+  padding: 30px;
+}
+#login .login-form .form-logo {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+#login .login-form .form-logo.logo-active {
+  color: #0bd;
+}
+#login .login-form .form-item {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+#login .login-form .form-item .formLabel {
+  color: rgba(52, 58, 64, 0.8);
+  position: absolute;
+  left: 26px;
+  top: 10px;
+  transition: all 0.4s ease;
+}
+#login .login-form .form-item .formLabel.formTop {
+  top: -10px;
+  left: 26px;
+  font-size: 0.8rem;
+  background-color: #fff;
+  color: #0bd;
+  padding: 0 5px;
+}
+#login .login-form .form-item .formInput {
+  width: 100%;
+  height: 50px;
+  padding: 5px 5%;
+  color: #343a40;
+  border: 1px solid rgba(52, 58, 64, 0.8);
+  border-radius: 27px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+#login .login-form .form-item .formInput:focus {
+  outline: none;
+  border: 1px solid #0bd;
+  color: #0bd;
+}
+#login .login-form .form-item .passwordCheck {
+  position: absolute;
+  color: rgba(52, 58, 64, 0.8);
+  top: 12px;
+  left: 295px;
+}
+#login .login-form .form-item .passwordCheck:hover {
+  color: #0bd;
+}
+#login .login-form .form-foot {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#login .login-form .form-foot .sign-up {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #0bd;
+}
+#login .login-form .form-foot .sign-up:hover {
+  color: #bcb8b8;
+}
+#login .login-form .form-foot .button {
+  display: block;
+  width: 120px;
+  height: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: rgba(0, 187, 221, 0.8);
+  color: #fff;
+}
+#login .login-form .form-foot .button:hover {
+  background-color: #0bd;
+}
+
+#signup {
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #bcb8b8;
+}
+#signup .signup-form {
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  margin: 80px auto;
+  border-radius: 5px;
+  padding: 30px;
+}
+#signup .signup-form .form-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+#signup .signup-form .form-item {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+#signup .signup-form .form-item .formLabel {
+  color: rgba(52, 58, 64, 0.8);
+  position: absolute;
+  left: 26px;
+  top: 10px;
+  transition: all 0.4s ease;
+}
+#signup .signup-form .form-item .formLabel.formTop {
+  top: -10px;
+  left: 26px;
+  font-size: 0.8rem;
+  background-color: #fff;
+  color: #0bd;
+  padding: 0 5px;
+}
+#signup .signup-form .form-item .formInput {
+  width: 100%;
+  height: 50px;
+  padding: 5px 5%;
+  color: #343a40;
+  border: 1px solid rgba(52, 58, 64, 0.8);
+  border-radius: 27px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+#signup .signup-form .form-item .formInput:focus {
+  outline: none;
+  border: 1px solid #0bd;
+  color: #0bd;
+}
+#signup .signup-form .form-item .passwordCheck {
+  position: absolute;
+  color: rgba(52, 58, 64, 0.8);
+  top: 12px;
+  left: 295px;
+}
+#signup .signup-form .form-item .passwordCheck:hover {
+  color: #0bd;
+}
+#signup .signup-form .form-foot {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#signup .signup-form .form-foot .sign-up {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #0bd;
+}
+#signup .signup-form .form-foot .sign-up:hover {
+  color: #bcb8b8;
+}
+#signup .signup-form .form-foot .button {
+  display: block;
+  width: 120px;
+  height: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fff;
+}
+#signup .signup-form .form-foot .button.primary {
+  background-color: rgba(0, 187, 221, 0.8);
+}
+#signup .signup-form .form-foot .button.primary:hover {
+  background-color: #0bd;
+}
+#signup .signup-form .form-foot .button.secondary {
+  background-color: rgba(52, 58, 64, 0.8);
+  text-decoration: none;
+  text-align: center;
+}
+#signup .signup-form .form-foot .button.secondary:hover {
+  background-color: #343a40;
+}
+
+#groupList {
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #bcb8b8;
+}
+#groupList .groupList-wrapper {
+  width: 400px;
+  height: auto;
+  min-height: 500px;
+  margin: 40px auto;
+  padding: 30px;
+}
+#groupList .groupList-wrapper a {
+  text-decoration: none;
+}
+#groupList .groupList-wrapper li {
+  list-style: none;
+}
+#groupList .groupList-wrapper .title {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+#groupList .groupList-wrapper .group-list .group-name {
+  font-size: 1.6rem;
+}
+#groupList .groupList-wrapper .group-list .group-name a {
+  color: #343a40;
+}
+#groupList .groupList-wrapper .group-list .group-name a:hover {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

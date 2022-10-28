@@ -69,6 +69,14 @@ header {
 
                     .menu-list {
                         padding: 10px 20px;
+
+                        .logout {
+                            color: rgba($color: v.$text-color2, $alpha: 0.7);
+                            
+                            &:hover {
+                                color: rgba($color: v.$text-color2, $alpha: 1.0);
+                            }
+                        }
                     }
                 }
                 &:hover .dropdown {

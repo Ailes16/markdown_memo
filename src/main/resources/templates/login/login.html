@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Page | Markdown Memo</title>
+    <title>Login Page | Markdown Memo</title>
 
     <!-- CSS -->
     <!-- reset css -->
@@ -33,39 +33,34 @@
     <header>
         <nav role="navigation">
             <h1 class="header-title"><a href="../index.html" th:href="@{/}">(title)</a></h1>
-            <div class="header-right">
-                <ul class="header-menu">
-                    <li class="menu-list"><a href="#">(menu1)</a></li>
-                    <li class="menu-list"><a href="#">(menu2)</a></li>
-                </ul>
-                <div class="user-menu">
-                    <a href="#" class="user-icon">
-                        <span class="fa-stack">
-                            <i class="fa-regular fa-circle fa-stack-2x"></i>
-                            <i class="fa-solid fa-user fa-stack-1x"></i>
-                        </span>
-                    </a>
-                    <div class="dropdown">
-                        <ul class="dropdown-menu">
-                            <li class="menu-list">
-                                <form action="#" th:action="@{/logout}" method="post"><button type="submit" class="logout">ログアウト</button></form>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </nav>
     </header>
 
-    <!-- group list -->
-    <main id="groupList">
-        <div class="groupList-wrapper">
-            <h2 class="title">Group List</h2>
-            <ul class="group-list" th:each="group : ${groupList}">
-                <li class="group-name">
-                    <a href="../memos/memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" th:text="${group.groupName}">(group name)</a>
-                </li>
-            </ul>
+    <!-- login form -->
+    <main id="login">
+        <div class="login-form">
+            <h2 class="form-logo">(title)</h2>
+            <form action="#" th:action="@{/login}" method="post">
+                <!-- email -->
+                <div class="form-item">
+                    <p class="formLabel">Email</p>
+                    <input type="email" name="email" id="emailInput" class="formInput">
+                </div>
+                <!-- password -->
+                <div class="form-item">
+                    <p class="formLabel">Password</p>
+                    <span class="passwordCheck"><i class="fa-solid fa-eye-slash"></i></span>
+                    <input type="password" name="password" id="passwordInput" class="formInput">
+                </div>
+                <!-- error message -->
+                <div th:if="${param.error}">
+                    <p class="invalid-feedback">メールアドレスもしくはパスワードが違います</p>
+                </div>
+                <div class="form-foot">
+                    <a href="../signup/signup.html" th:href="@{/signup}" class="sign-up">新規登録</a>
+                    <button type="submit" class="button primary">Log In</button>
+                </div>
+            </form>
         </div>
     </main>
 

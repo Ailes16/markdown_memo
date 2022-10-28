@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page | Markdown Memo</title>
+
+    <!-- CSS -->
+    <!-- reset css -->
+    <link rel="stylesheet" th:href="@{/css/ress.min.css}" />
+    <!-- font awesome -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css}">
+    <!-- github markdown -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css}">
+    <!-- highlight.js css -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css}">
+    <!-- css -->
+    <link rel="stylesheet" th:href="@{/css/style.min.css}">
+
+    <!-- Javascript -->
+    <!-- jquery -->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.1.min.js}" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+    <!-- marked.js -->
+    <script th:src="@{https://cdn.jsdelivr.net/npm/marked/marked.min.js}" defer></script>
+    <!-- highlight.js -->
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js}" defer></script>
+    <!-- js -->
+    <script th:src="@{/js/main.js}" defer></script>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <nav role="navigation">
+            <h1 class="header-title"><a href="../index.html" th:href="@{/}">(title)</a></h1>
+        </nav>
+    </header>
+
+    <!-- signup form -->
+    <main id="signup">
+        <div class="signup-form">
+            <h2 class="form-title">新規登録</h2>
+            <form action="#" th:action="@{/signup}" th:method="post" th:object="${signupForm}">
+                <!-- username -->
+                <div class="form-item">
+                    <p class="formLabel" th:classappend="*{username} ? 'formTop'">Name</p> <!-- TODO:認証失敗対策 -->
+                    <input type="text" name="username" id="usernameInput" class="formInput" th:field="*{username}">
+                    <p class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">(errors)</p>
+                </div>
+                <!-- email -->
+                <div class="form-item">
+                    <p class="formLabel" th:classappend="*{email} ? 'formTop'">Email</p>
+                    <input type="email" name="email" id="emailInput" class="formInput" th:field="*{email}">
+                    <p class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">(errors)</p>
+                </div>
+                <!-- password -->
+                <div class="form-item">
+                    <p class="formLabel" th:classappend="*{password} ? 'formTop'">Password</p>
+                    <span class="passwordCheck"><i class="fa-solid fa-eye-slash"></i></span>
+                    <input type="password" name="password" id="passwordInput" class="formInput" th:field="*{password}">
+                    <p class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">(errors)</p>
+                </div>
+                <!-- button -->
+                <div class="form-foot">
+                    <a href="../login/login.html" th:href="@{/}" class="button secondary">キャンセル</a>
+                    <button type="submit" class="button primary">登録</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer></footer>
+</body>
+</html>

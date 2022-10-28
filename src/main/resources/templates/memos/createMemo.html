@@ -8,7 +8,7 @@
 
     <!-- CSS -->
     <!-- reset css -->
-    <link rel="stylesheet" th:href="@{https://unpkg.com/ress/dist/ress.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ress.min.css}" />
     <!-- font awesome -->
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css}">
     <!-- github markdown -->
@@ -47,7 +47,9 @@
                     </a>
                     <div class="dropdown">
                         <ul class="dropdown-menu">
-                            <li class="menu-list"><a href="#">ログアウト</a></li>
+                            <li class="menu-list">
+                                <form action="#" th:action="@{/logout}" method="post"><button type="submit" class="logout">ログアウト</button></form>
+                            </li>
                         </ul>
                     </div>
                 </div>

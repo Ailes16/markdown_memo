@@ -1,0 +1,106 @@
+@use "../setting/variables" as v;
+
+#login {
+    width: 100%;
+    height: calc(100% - 120px); // header,footerを引いた高さ
+    background-color: v.$main-color2;
+
+    .login-form {
+        width: 400px;
+        height: auto;
+        background-color: #fff;
+        margin: 80px auto;
+        border-radius: 5px;
+        padding: 30px;
+
+        .form-logo {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+
+            &.logo-active {
+                color: v.$accent-color;
+            }
+        }
+        .form-item {
+            position: relative;
+            display: block;
+            margin-bottom: 30px;
+
+            .formLabel {
+                color: rgba($color: v.$main-color1, $alpha: .8);
+                position: absolute;
+                left: 26px;
+                top: 10px;
+                transition: all .4s ease;
+
+                // form選択時
+                &.formTop {
+                    top: -10px;
+                    left: 26px;
+                    font-size: 0.8rem;
+                    background-color: #fff;
+                    color: v.$accent-color;
+                    padding: 0 5px;
+                }
+            }
+            .formInput {
+                width: 100%;
+                height: 50px;
+                padding: 5px 5%;
+                color: v.$main-color1;
+                border: 1px solid rgba($color: v.$main-color1, $alpha: .8);
+                border-radius: 27px;
+                background-color: #fff;
+                transition: all .2s ease; // TODO:読み込み時に発動するなら対策
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid v.$accent-color;
+                    color: v.$accent-color;
+                }
+            }
+            // password確認用
+            .passwordCheck {
+                position: absolute;
+                color: rgba($color: v.$main-color1, $alpha: .8);
+                top: 12px;
+                left: 295px;
+
+                &:hover {
+                    color: v.$accent-color;
+                }
+            }
+        }
+        .form-foot {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .sign-up {
+                margin-left: 10px;
+                text-decoration: none;
+                color: v.$accent-color;
+
+                &:hover {
+                    color: v.$main-color2;
+                }
+            }
+            .button {
+                display: block;
+                width: 120px;
+                height: auto;
+                padding: 5px 10px;
+                border-radius: 20px;
+                background-color: rgba($color: v.$accent-color, $alpha: .8);
+                color: v.$text-color2;
+    
+                &:hover {
+                    background-color: v.$accent-color;
+                }
+            }
+        }
+    }
+}
