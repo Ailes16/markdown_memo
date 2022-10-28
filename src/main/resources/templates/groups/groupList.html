@@ -4,19 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo Page | Markdown Memo</title>
+    <title>Group Page | Markdown Memo</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" th:href="@{https://unpkg.com/ress/dist/ress.min.css}" />
-    <link rel="stylesheet" th:href="@{/css/style.min.css}" />
+    <!-- reset css -->
+    <link rel="stylesheet" th:href="@{/css/ress.min.css}" />
+    <!-- font awesome -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css}">
+    <!-- github markdown -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css}">
+    <!-- highlight.js css -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css}">
+    <!-- css -->
+    <link rel="stylesheet" th:href="@{/css/style.min.css}">
+
+    <!-- Javascript -->
+    <!-- jquery -->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.1.min.js}" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+    <!-- marked.js -->
+    <script th:src="@{https://cdn.jsdelivr.net/npm/marked/marked.min.js}" defer></script>
+    <!-- highlight.js -->
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js}" defer></script>
+    <!-- js -->
+    <script th:src="@{/js/main.js}" defer></script>
 </head>
 <body>
-    <h1>Group List Page</h1>
-    <a href="../index.html" th:href="@{/}">Top Page</a>
-    <ul th:each="group : ${groupList}">
-        <li>
-            <a href="../memos/memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" th:text="${group.groupName}">(group name)</a>
-        </li>
-    </ul>
+    <!-- header -->
+    <header>
+        <nav role="navigation">
+            <h1 class="header-title"><a href="../index.html" th:href="@{/}">(title)</a></h1>
+            <div class="header-right">
+                <ul class="header-menu">
+                    <li class="menu-list"><a href="#">(menu1)</a></li>
+                    <li class="menu-list"><a href="#">(menu2)</a></li>
+                </ul>
+                <div class="user-menu">
+                    <a href="#" class="user-icon">
+                        <span class="fa-stack">
+                            <i class="fa-regular fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid fa-user fa-stack-1x"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li class="menu-list">
+                                <form action="#" th:action="@{/logout}" method="post"><button type="submit" class="logout">ログアウト</button></form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- group list -->
+    <main id="groupList">
+        <div class="groupList-wrapper">
+            <h2 class="title">Group List</h2>
+            <ul class="group-list" th:each="group : ${groupList}">
+                <li class="group-name">
+                    <a href="../memos/memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" th:text="${group.groupName}">(group name)</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer></footer>
 </body>
 </html>

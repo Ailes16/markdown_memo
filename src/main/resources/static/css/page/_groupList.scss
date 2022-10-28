@@ -1,0 +1,41 @@
+@use "../setting/variables" as v;
+
+#groupList {
+    width: 100%;
+    height: calc(100% - 120px); // header,footerを引いた高さ
+    background-color: v.$main-color2;
+
+    .groupList-wrapper {
+        width: 400px;
+        height: auto;
+        min-height: 500px;
+        margin: 40px auto;
+        padding: 30px;
+
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        .title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
+        .group-list {
+
+            .group-name {
+                font-size: 1.6rem;
+
+                a {
+                    color: v.$text-color1;
+        
+                    &:hover {
+                        color: v.$text-color2;
+                    }
+                }
+            }
+        }
+    }
+}

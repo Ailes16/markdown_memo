@@ -188,15 +188,14 @@ aside .memo-list-container .memo-list {
 #memo .edit-wrapper li {
   list-style: none;
 }
-#memo .edit-wrapper a {
-  text-decoration: none;
-  font-size: 1.2rem;
+#memo .edit-wrapper button {
+  font-size: 1.4rem;
 }
 #memo .edit-wrapper .edit-menu {
   display: flex;
 }
 #memo .edit-wrapper .edit-menu .menu-list {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 #memo .edit-wrapper .edit-menu .delete {
   color: rgba(52, 58, 64, 0.7);
@@ -474,5 +473,38 @@ aside .memo-list-container .memo-list {
 }
 #signup .signup-form .form-foot .button.secondary:hover {
   background-color: #343a40;
+}
+
+#groupList {
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #bcb8b8;
+}
+#groupList .groupList-wrapper {
+  width: 400px;
+  height: auto;
+  min-height: 500px;
+  margin: 40px auto;
+  padding: 30px;
+}
+#groupList .groupList-wrapper a {
+  text-decoration: none;
+}
+#groupList .groupList-wrapper li {
+  list-style: none;
+}
+#groupList .groupList-wrapper .title {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+#groupList .groupList-wrapper .group-list .group-name {
+  font-size: 1.6rem;
+}
+#groupList .groupList-wrapper .group-list .group-name a {
+  color: #343a40;
+}
+#groupList .groupList-wrapper .group-list .group-name a:hover {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
