@@ -9,6 +9,7 @@ aside {
     top: 80px;
     left: 0;
     z-index: 80;
+    box-shadow: 6px 0 3px -3px rgba($color: #000000, $alpha: .3);
 
     li {
         list-style: none;

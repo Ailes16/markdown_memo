@@ -61,6 +61,7 @@ footer {
   bottom: 0;
   left: 0;
   z-index: 100;
+  box-shadow: 0 -6px 3px -3px rgba(0, 0, 0, 0.3);
 }
 
 header {
@@ -71,6 +72,7 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
+  box-shadow: 0 6px 3px -3px rgba(0, 0, 0, 0.3);
 }
 header nav {
   height: 100%;
@@ -154,6 +156,7 @@ aside {
   top: 80px;
   left: 0;
   z-index: 80;
+  box-shadow: 6px 0 3px -3px rgba(0, 0, 0, 0.3);
 }
 aside li {
   list-style: none;
@@ -246,6 +249,7 @@ aside .memo-list-container .memo-list {
   top: 80px;
   left: 0;
   z-index: 80;
+  box-shadow: 6px 0 3px -3px rgba(0, 0, 0, 0.3);
 }
 #createMemo #create .btn-container {
   display: flex;
