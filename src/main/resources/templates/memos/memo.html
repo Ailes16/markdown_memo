@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo Page | Markdown Memo</title>
+    <title>Memo Page | Simple Markdown Memo</title>
 
     <!-- CSS -->
     <!-- reset css -->
@@ -36,11 +36,10 @@
     <!-- header -->
     <header>
         <nav role="navigation">
-            <h1 class="header-title"><a href="../index.html" th:href="@{/}">(title)</a></h1>
+            <h1 class="header-title"><a href="../index.html" th:href="@{/}">SMDM</a></h1>
             <div class="header-right">
                 <ul class="header-menu">
-                    <li class="menu-list"><a href="#">(menu1)</a></li>
-                    <li class="menu-list"><a href="#">(menu2)</a></li>
+                    <li class="menu-list"><a href="#" th:href="@{/groups}">Group Page</a></li>
                 </ul>
                 <div class="user-menu">
                     <a href="#" class="user-icon">
@@ -69,13 +68,13 @@
                 <h2 class="group-name"><a href="../groups/groupList.html" th:href="@{/groups}" th:text="${group.groupName}">(group-name)</a></h2>
                 <ul class="side-menu">
                     <li class="menu-list"><a href="./createMemo.html" th:href="@{/memos/{groupId}/createMemo(groupId=${group.groupId})}"><i class="fa-solid fa-file"></i></a></li>
-                    <li class="menu-list"><a href="#"><i class="fa-solid fa-folder"></i></a></li>
+                    <!-- <li class="menu-list"><a href="#"><i class="fa-solid fa-folder"></i></a></li> --> <!-- ディレクトリ機能 -->
                 </ul>
             </div>
             <div class="memo-list-container">
                 <ul class="directory-list" th:each="memo : ${memoList}">
-                    <li class="memo-name" th:id="${memo.memoId}" th:text="${memo.memoName}">(memo name)</li> <!-- th:href="@{/memos/{memoId}(memoId=${memo.id})}" th:id="'memo' + ${memo.id}" -->
-                    <li class="directory-name">(directory1)</li>
+                    <li class="memo-name" th:id="${memo.memoId}" th:text="${memo.memoName}">(memo name)</li>
+                    <!-- <li class="directory-name">(directory1)</li>
                     <ul class="memo-list">
                         <li class="directory-name">(directory1-1)</li>
                         <ul class="memo-list">
@@ -83,7 +82,7 @@
                             <li class="memo-name">(memo2)</li>
                             <li class="memo-name">(memo3)</li>
                         </ul>
-                    </ul>
+                    </ul> --> <!-- ディレクトリ機能 -->
                 </ul>
             </div>
         </aside>
@@ -91,7 +90,7 @@
         <!-- memo-content -->
         <article class="markdown-body">
             <div id="memo-content">
-                <h1>GitHub Markdown Sample</h1>
+                <h1>Welecom to Simple Markdown Memo</h1>
                 <h2>list</h2>
                 <ul>
                     <li>1つ目</li>
