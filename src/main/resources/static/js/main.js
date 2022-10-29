@@ -7,9 +7,18 @@ $(function(){
     // memo-name押下時の処理
     $(".memo-name").click(function(){
         const targetMemo = memoList.find((v) => v.memoId == $(this).attr("id"));
-        console.log(targetMemo);
         $("#memo-content").html(marked.parse(targetMemo.content));
         hljs.initHighlightingOnLoad();
+        $(".edit-wrapper").addClass("active");
+        $(".edit-menu").find("#update-memoId").val(targetMemo.memoId);
+        $(".edit-menu").find("#delete-memoId").val(targetMemo.memoId);
+    });
+
+    // delete-btn押下時の処理
+    $("#delete-btn").click(function(){
+        if(!confirm("削除してもよろしいですか？")) {
+            return false;
+        }
     });
 
     // preview機能

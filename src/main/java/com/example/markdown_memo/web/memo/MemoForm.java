@@ -8,11 +8,13 @@ import lombok.Data;
 @Data
 public class MemoForm {
 
+    private int memoId;
+
     @NotBlank
     @Size(max = 30)
     private String memoName;
 
     @NotBlank
-    @Size(max = 2000)
+    @Size(max = 10000)
     private String content;
 }

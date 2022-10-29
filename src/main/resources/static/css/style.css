@@ -23,6 +23,29 @@ h6 {
   color: red;
 }
 
+#hasErrors {
+  width: 100%;
+  height: calc(100% - 120px);
+  background-color: #bcb8b8;
+}
+#hasErrors .error-wrapper {
+  width: 600px;
+  height: auto;
+  margin: 40px auto;
+  padding: 30px;
+}
+#hasErrors .error-wrapper .errorMessage {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+#hasErrors .error-wrapper a {
+  text-decoration: none;
+  color: #343a40;
+}
+#hasErrors .error-wrapper a:hover {
+  color: #fff;
+}
+
 body {
   font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
   line-height: 1.7;
@@ -184,6 +207,10 @@ aside .memo-list-container .memo-list {
   top: 90px;
   right: 5%;
   z-index: 80;
+  display: none;
+}
+#memo .edit-wrapper.active {
+  display: block;
 }
 #memo .edit-wrapper li {
   list-style: none;

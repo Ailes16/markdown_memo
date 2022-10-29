@@ -1,4 +1,32 @@
+@use "../setting/variables" as v;
+
 // error message
 .invalid-feedback {
     color: red;
+}
+// error page
+#hasErrors {
+    width: 100%;
+    height: calc(100% - 120px); // header,footerを引いた高さ
+    background-color: v.$main-color2;
+
+    .error-wrapper {
+        width: 600px;
+        height: auto;
+        margin: 40px auto;
+        padding: 30px;
+
+        .errorMessage {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
+        a {
+            text-decoration: none;
+            color: v.$text-color1;
+
+            &:hover {
+                color: v.$text-color2;
+            }
+        }
+    }
 }

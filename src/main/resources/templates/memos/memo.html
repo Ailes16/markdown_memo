@@ -103,12 +103,15 @@
         <div class="edit-wrapper">
             <ul class="edit-menu">
                 <li class="menu-list">
-                    <button type="submit" class="delete"><i class="fa-solid fa-trash"></i></button>
+                    <form action="#" th:action="@{/memos/{groupId}/deleteMemo(groupId=${group.groupId})}" method="post">
+                        <input type="hidden" id="delete-memoId" name="memoId">
+                        <button type="submit" class="delete" id="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                    </form>
                 </li>
                 <li class="menu-list">
-                    <form action="" method="post">
-                        <input type="hidden" id="memoId">
-                        <button type="submit" class="edit"><i class="fa-solid fa-pen"></i></button>
+                    <form action="#" th:action="@{/memos/{groupId}/updateMemo(groupId=${group.groupId})}" method="get">
+                        <input type="hidden" id="update-memoId" name="memoId">
+                        <button type="submit" class="edit" id="edit-btn"><i class="fa-solid fa-pen"></i></button>
                     </form>
                 </li>
             </ul>
