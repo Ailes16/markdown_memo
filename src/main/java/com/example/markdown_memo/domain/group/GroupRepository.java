@@ -11,8 +11,8 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface GroupRepository {
 
-    @Select("select * from groups")
-    List<Group> findAll();
+    @Select("select g.id, g.group_name from groups as g inner join membership as m on g.id = m.group_id where m.user_id = #{userId}")
+    List<Group> findAll(int userId);
 
     @Select("select * from groups where id = #{groupId}")
     Group findById(int groupId);

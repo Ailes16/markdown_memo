@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Memo Page | Markdown Memo</title>
+    <title>403 Forbidden | Markdown Memo</title>
 
     <!-- CSS -->
     <!-- reset css -->
@@ -57,23 +57,12 @@
         </nav>
     </header>
 
-    <!-- main -->
-    <main id="createMemo">
-        <!-- update -->
-        <div id="create">
-            <form action="#" th:action="@{/memos/{groupId}/updateMemo(groupId=${group.groupId})}" th:method="post" th:object="${memoForm}">
-                <input type="hidden" id="memoIdInput" th:field="*{memoId}">
-                <input type="text" id="memoNameInput" placeholder="memo name" th:field="*{memoName}" required>
-                <textarea id="contentInput" placeholder="Markdown記法でMemoしよう" th:field="*{content}"></textarea>
-                <div class="btn-container">
-                    <a href="./memo.html" th:href="@{/memos/{groupId}(groupId=${group.groupId})}" class="button secondary">キャンセル</a>
-                    <button type="submit" class="button primary">作成</button>
-                </div>
-            </form>
+    <!-- group list -->
+    <main id="hasErrors">
+        <div class="error-wrapper">
+            <p class="errorMessage">403 Forbidden</p>
+            <a th:href="@{/}">Topページへ</a>
         </div>
-
-        <!-- preview -->
-        <div id="preview" class="markdown-body"></div>
     </main>
 
     <!-- footer -->

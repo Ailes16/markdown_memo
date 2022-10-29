@@ -1,7 +1,7 @@
 create table memos (
     id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     memo_name VARCHAR(30) NOT NULL,
-    content VARCHAR(2000),
+    content VARCHAR(10000),
     group_id BIGINT
 );
 create table users (

@@ -25,4 +25,14 @@ public class MemoService {
     public void create(String memoName, String content, int groupId) {
         memoRepository.insert(memoName, content, groupId);
     }
+
+    @Transactional
+    public void update(int memoId, String memoName, String content) {
+        memoRepository.update(memoId, memoName, content);
+    }
+
+    @Transactional
+    public void delete(int memoId) {
+        memoRepository.delete(memoId);
+    }
 }

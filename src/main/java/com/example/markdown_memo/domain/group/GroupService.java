@@ -15,8 +15,8 @@ public class GroupService {
     private final GroupRepository groupRepository;
     private final MembershipService membershipService;
 
-    public List<Group> findAll() {
-        return groupRepository.findAll();
+    public List<Group> findAll(int userId) {
+        return groupRepository.findAll(userId);
     }
 
     public Group findById(int groupId) {
